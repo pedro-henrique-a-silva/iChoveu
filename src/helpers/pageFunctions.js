@@ -110,6 +110,16 @@ export function createCityElement(cityInfo) {
 /**
  * Lida com o evento de submit do formulário de busca
  */
+const createCards = (cities) => {
+  const ulCitiesEl = document.querySelector('#cities');
+
+  return cities.map((city) => createCityElement(city))
+    .reduce((citiesCardContainer, citieEl) => {
+      citiesCardContainer.appendChild(citieEl);
+      return citiesCardContainer;
+    }, ulCitiesEl);
+};
+
 export async function handleSearch(event) {
   event.preventDefault();
   clearChildrenById('cities');
@@ -120,10 +130,16 @@ export async function handleSearch(event) {
     const cities = await searchCities(searchValue);
 
     const weathersCity = await Promise.all(
-      cities.map(async (city) => getWeatherByCity(city.url)),
+      cities.map(async ({ name, country, url }) => {
+        const weatherdata = await getWeatherByCity(url);
+        return {
+          name,
+          country,
+          ...weatherdata,
+          url };
+      }),
     );
-
-    console.log(weathersCity);
+    createCards(weathersCity);
   } catch (error) {
     console.log(error.message);
   }

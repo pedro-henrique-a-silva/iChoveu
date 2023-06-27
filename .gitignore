@@ -8,4 +8,3 @@ cypress/reports
 cypress/screenshots
 coverage/
 .env
-package-lock.json
