@@ -1,4 +1,4 @@
-import { searchCities } from './weatherAPI';
+import { searchCities, getWeatherByCity } from './weatherAPI';
 
 /**
  * Cria um elemento HTML com as informações passadas
@@ -110,12 +110,21 @@ export function createCityElement(cityInfo) {
 /**
  * Lida com o evento de submit do formulário de busca
  */
-export function handleSearch(event) {
+export async function handleSearch(event) {
   event.preventDefault();
   clearChildrenById('cities');
 
   const searchInput = document.getElementById('search-input');
   const searchValue = searchInput.value;
-  searchCities(searchValue);
-  // seu código aqui
+  try {
+    const cities = await searchCities(searchValue);
+
+    const weathersCity = await Promise.all(
+      cities.map(async (city) => getWeatherByCity(city.url)),
+    );
+
+    console.log(weathersCity);
+  } catch (error) {
+    console.log(error.message);
+  }
 }

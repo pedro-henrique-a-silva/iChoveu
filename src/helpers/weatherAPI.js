@@ -1,15 +1,14 @@
 // Remova os comentários a medida que for implementando as funções
 const TOKEN = import.meta.env.VITE_TOKEN;
-const BASE_URL = 'http://api.weatherapi.com/v1/search.json?lang=pt&';
 
-const fetchAPI = async (term) => (await fetch(`${BASE_URL}key=${TOKEN}&q=${term}`))
-  .json();
+const fetchAPI = async (url) => (await fetch(url)).json();
 
 export const searchCities = async (term) => {
+  const BASE_URL = 'http://api.weatherapi.com/v1/search.json?lang=pt&';
   try {
     if (!term) throw new Error('Nenhum parametro de pesquisa informado');
 
-    const weatherData = await fetchAPI(term);
+    const weatherData = await fetchAPI(`${BASE_URL}key=${TOKEN}&q=${term}`);
 
     if (weatherData.length === 0) throw new Error('Nenhuma cidade encontrada');
 
@@ -19,6 +18,12 @@ export const searchCities = async (term) => {
   }
 };
 
-export const getWeatherByCity = (/* cityURL */) => {
-//   seu código aqui
+export const getWeatherByCity = async (cityURL) => {
+  const BASE_URL = 'http://api.weatherapi.com/v1/current.json?lang=pt&';
+  const weatherCityData = await fetchAPI(`${BASE_URL}key=${TOKEN}&q=${cityURL}`);
+  return {
+    temp: weatherCityData.current.temp_c,
+    condition: weatherCityData.current.condition.text,
+    icon: weatherCityData.current.condition.icon,
+  };
 };
