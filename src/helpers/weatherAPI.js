@@ -27,3 +27,10 @@ export const getWeatherByCity = async (cityURL) => {
     icon: weatherCityData.current.condition.icon,
   };
 };
+
+export const getWeatherByDay = async (cityURL) => {
+  const BASE_URL = 'http://api.weatherapi.com/v1/forecast.json?lang=pt&';
+  const DIAS = 7;
+  const weatherData = await fetchAPI(`${BASE_URL}key=${TOKEN}&q=${cityURL}&days=${DIAS}`);
+  return weatherData.forecast.forecastday;
+};
