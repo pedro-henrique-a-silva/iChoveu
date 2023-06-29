@@ -1,4 +1,4 @@
-import { handleSearch } from './helpers/pageFunctions';
+import { handleSearch, darkMode } from './helpers/pageFunctions';
 import './style.css';
 
 document.getElementById('search-form')
@@ -8,3 +8,6 @@ document.getElementById('close-forecast')
   .addEventListener('click', () => {
     document.getElementById('forecast-container').classList.add('hidden');
   });
+
+document.getElementById('toggle-dark')
+  .addEventListener('change', darkMode);

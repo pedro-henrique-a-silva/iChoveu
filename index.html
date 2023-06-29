@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,6 +8,7 @@
   <title>iChoveu</title>
   <script src="src/main.js" type="module" defer></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 
 <body>
@@ -21,6 +22,9 @@
         </i>
       </button>
     </form>
+
+    <input type="checkbox" id="toggle-dark" name="toggle-dark">
+   
   </header>
   <ul id="cities"></ul>
   <div id="forecast-container" class="forecast-container hidden">

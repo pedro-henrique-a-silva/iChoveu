@@ -164,3 +164,15 @@ export async function handleSearch(event) {
     console.log(error.message);
   }
 }
+
+const changeTheme = (theme) => {
+  document.documentElement.setAttribute('data-theme', theme);
+};
+
+export const darkMode = (event) => {
+  if (!event.target.checked) {
+    changeTheme('ligth');
+  } else {
+    changeTheme('dark');
+  }
+};
