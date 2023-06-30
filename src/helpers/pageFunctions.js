@@ -166,7 +166,8 @@ export async function handleSearch(event) {
 }
 
 const changeTheme = (theme) => {
-  document.documentElement.setAttribute('data-theme', theme);
+  // document.documentElement.setAttribute('data-theme', theme);
+  document.body.className = theme;
 };
 
 export const darkMode = (event) => {

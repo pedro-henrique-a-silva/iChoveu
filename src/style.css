@@ -5,7 +5,8 @@
   box-sizing: border-box;
 }
 
-html {
+/* html { */
+.ligth {
 
   --background-body: white;
 
@@ -26,11 +27,12 @@ html {
   --color-min: rgb(90, 90, 90);
 
   --color-close: rgb(255, 185, 0);
-  
+
   --color-close-hover: rgb(255, 153, 0);
 }
 
-html[ data-theme = 'dark' ] {
+/* html[ data-theme = 'dark' ] { */
+.dark {
 
   --background-body: hsl(216, 65%, 11%);
 
