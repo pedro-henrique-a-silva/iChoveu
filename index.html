@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- <html lang="en" data-theme="light"> -->
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>iChoveu</title>
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <script type="module" crossorigin src="/assets/index.7d94b796.js"></script>
+  <link rel="stylesheet" href="/assets/index.0ef687b3.css">
+</head>
+
+<body class="ligth">
+  <header>
+    <img src="/assets/iChoveuIcon.40faf189.png" alt="page icon">
+    <form id="search-form">
+      <input type="text" name="city" placeholder="Pesquisar cidade" id="search-input" />
+      <button type="submit" id="search-button">
+        <i class="material-icons">
+          search
+        </i>
+      </button>
+    </form>
+
+    <input type="checkbox" id="toggle-dark" name="toggle-dark">
+   
+  </header>
+  <ul id="cities"></ul>
+  <div id="forecast-container" class="forecast-container hidden">
+    <button id="close-forecast">
+      <i class="material-icons">
+        close
+      </i>
+    </button>
+    <div id="weekdays" class="weekdays"></div>
+  </div>
+</body>
+
+</html>
