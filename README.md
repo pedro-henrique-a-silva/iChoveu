@@ -1,33 +1,42 @@
-# Título do Projeto
+# IChoveu
 
 ## Descrição
 
-Este repositório está em construção. Aqui você encontrará [breve resumo do projeto ou curso] e seus componentes.
+Explore a Previsão do Tempo, um projeto desenvolvido com React, TypeScript, CSS e Flexbox para proporcionar uma experiência simplificada de acesso às condições climáticas diárias e semanais de uma cidade específica.
 
-## Conteúdo
+## Funcionalidades Principais
 
-- [Instruções de Instalação](#instruções-de-instalação)
-- [Como Usar](#como-usar)
+- **Acesso à Previsão do Tempo:** Pesquise por nome de cidade para obter informações detalhadas sobre as condições climáticas, tanto para o dia quanto para a semana.
 
-## Instruções de Instalação
+## Tecnologias Utilizadas
 
-Descreva aqui as instruções necessárias para configurar o ambiente de desenvolvimento e instalar quaisquer dependências.
+- **React e TypeScript:** Utilizei a combinação poderosa do React com TypeScript para garantir um código mais robusto e fácil de entender.
+
+- **CSS com Flexbox:** A estilização é feita utilizando CSS com o auxílio do Flexbox, proporcionando um layout responsivo e agradável.
+
+- **API de Previsão do Tempo:** Integrei a API [WeatherAPI](http://api.weatherapi.com/) para obter dados precisos e atualizados sobre a previsão do tempo.
+
+- **React Hook useEffect:** Tirei proveito do useEffect para garantir a busca e atualização automática dos dados de previsão do tempo.
 
 ## Como Usar
 
-Explique como usar. Forneça exemplos de código, capturas de tela ou demonstrações.
+1. **Clone o Repositório:**
+   ```bash
+   git clone git@github.com:pedro-henrique-a-silva/iChoveu.git
 
-## Contribuição
+2. **Instale as Dependências:**
+   ```bash
+   npm install
 
-Se você deseja contribuir para este projeto, siga estas etapas para contribuir:
+4. **Inicie a Aplicação:**
+   ```bash
+   npm start
 
-1. Crie um fork deste repositório.
-2. Crie um novo branch com um nome descritivo: `git checkout -b minha-contribuicao`
-3. Faça suas alterações e commit: `git commit -m "Adicionando minha contribuição"`
-4. Envie seu branch para o repositório: `git push origin minha-contribuicao`
-5. Abra um pull request neste repositório e aguarde o feedback.
+5. **Pesquise e Explore:**
+  Digite o nome da cidade desejada para obter informações detalhadas sobre a previsão do tempo.
+  
+**Obs:** é necessário que você tenha o `npm` e o `node` instalados em sua maquina.
 
-Lembre-se de que todas as contribuições são valorizadas e ajudam a tornar este projeto melhor para todos!
+## Contribuições
 
-## Continue como desejar este Readme.md
-**Observação:** Este repositório está em construção e será atualizado regularmente. Sinta-se à vontade para adicionar mais seções conforme necessário para o seu projeto.
+Contribuições são bem-vindas! Se você tiver sugestões para melhorar a aplicação ou encontrar problemas, sinta-se à vontade para compartilhar suas ideias através de issues ou pull requests.
